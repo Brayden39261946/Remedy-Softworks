@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Darker background */
+            color: #e0e0e0;
+        }
+
+        header {
+            background-color: #1e1e1e;
+            padding: 15px;
+            text-align: center;
+            color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px; /* Space between boxes */
+            padding: 20px;
+        }
+
+        .package-box {
+            background-color: #202020; /* Card background */
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+        }
+
+        .package-box:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+        }
+
+        .package-title {
+            font-size: 22px; /* Title size */
+            margin-bottom: 10px; /* Space below title */
+            font-weight: bold;
+        }
+
+        .package-description {
+            font-size: 14px; /* Description size */
+            margin-bottom: 15px; /* Space below description */
+        }
+
+        .package-price {
+            font-size: 18px; /* Price size */
+            margin-bottom: 15px; /* Space below price */
+            font-weight: bold;
+        }
+
+        .purchase-button {
+            background-color: #f44336; /* Red button */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            font-size: 16px; /* Button text size */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .purchase-button:hover {
+            background-color: #c62828; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Packages for Purchase</h1>
+</header>
+
+<div class="container">
+    <div class="package-box">
+        <div class="package-title">Remedy Execution</div>
+        <div class="package-description">Gives you Remedy Executor with Premium Features, Direct Script Access, with a higher level of execution.</div>
+        <div class="package-price">$15/Month</div>
+        <a href="https://your-purchase-link.com" class="purchase-button">Purchase</a>
+    </div>
+
+    <div class="package-box">
+        <div class="package-title">Enterprise</div>
+        <div class="package-description">Gives you Remedy Executor, and 2 Scripts of your Choice for Premium.</div>
+        <div class="package-price">$20/month</div>
+        <a href="https://your-purchase-link.com" class="purchase-button">Purchase</a>
+    </div>
+
+    <div class="package-box">
+        <div class="package-title">Vertical Box 3</div>
+        <div class="package-description">Gives you Remedy Executor, and Any Scripts of your Choice for Premium.!</div>
+        <div class="package-price">$35/month</div>
+        <a href="https://your-purchase-link.com" class="purchase-button">Purchase</a>
+    </div>
+</div>
+
+</body>
+</html>
