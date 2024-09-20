@@ -37,25 +37,16 @@
             background-color: #202020; /* Card background */
             border: 1px solid #444; /* Darker border */
             transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
-            height: 250px; /* Fixed height for uniformity */
+            height: 300px; /* Increased height for label */
+            position: relative; /* Allow absolute positioning of label */
         }
 
         .downloadOption {
             padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start; /* Align items to the start */
             height: 100%; /* Ensure it takes full height */
-        }
-
-        .username {
-            font-size: 20px; /* Username font size */
-            margin-bottom: 10px;
-        }
-
-        .reason {
-            font-size: 14px; /* Reason font size */
-            margin-bottom: 10px;
         }
 
         .tag {
@@ -64,8 +55,20 @@
             padding: 5px 10px;
             border-radius: 5px;
             font-weight: bold;
-            display: inline-block;
-            margin-top: auto; /* Align at bottom */
+            position: absolute; /* Absolute positioning */
+            top: 10px; /* Position at the top */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for centering */
+        }
+
+        .username {
+            font-size: 20px; /* Username font size */
+            margin-top: 40px; /* Space below the label */
+        }
+
+        .reason {
+            font-size: 14px; /* Reason font size */
+            margin-top: 10px; /* Space above reason */
         }
 
         .pagination {
@@ -98,34 +101,35 @@
     <div class="software-grid">
         <!-- Player Card 1 -->
         <div class="round downloadOption">
+            <div class="tag">BANNED</div>
             <div class="username">Player1</div>
             <div class="reason">Reason: Cheating</div>
-            <div class="tag">BANNED</div>
         </div>
 
         <!-- Player Card 2 -->
         <div class="round downloadOption">
+            <div class="tag">BANNED</div>
             <div class="username">Player2</div>
             <div class="reason">Reason: Toxic Behavior</div>
-            <div class="tag">BANNED</div>
         </div>
 
         <!-- Player Card 3 -->
         <div class="round downloadOption">
+            <div class="tag">BANNED</div>
             <div class="username">Player3</div>
             <div class="reason">Reason: Exploiting</div>
-            <div class="tag">BANNED</div>
         </div>
 
         <!-- Additional player cards can be added here -->
     </div>
+</div>
 
-    <div class="pagination">
-        <a href="#">[1]</a>
-        <a href="#">[2]</a>
-        <a href="#">[3]</a>
-        <!-- Add more pages as needed -->
-    </div>
+<!-- Pagination Navigation -->
+<div class="pagination">
+    <a href="#">[1]</a>
+    <a href="#">[2]</a>
+    <a href="#">[3]</a>
+    <!-- Add more pages as needed -->
 </div>
 
 </body>
