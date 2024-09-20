@@ -64,33 +64,72 @@
             height: 100%; /* Ensure it takes full height */
         }
 
-       .tag {
-    position: absolute;
-    bottom: 10px; /* Position it at the bottom */
-    left: 10px; /* Position it to the left */
-    padding: 3px 6px; /* Smaller padding */
-    border-radius: 5px;
-    font-size: 15px; /* Smaller font size */
-    font-weight: bold;
-    color: #fff;
-}
+        .tag {
+            position: absolute;
+            top: 10px; /* Position it at the top */
+            left: 10px; /* Position it to the left */
+            padding: 3px 6px; /* Smaller padding */
+            border-radius: 5px;
+            font-size: 15px; /* Font size */
+            font-weight: bold;
+            color: #fff;
+            background-color: #f44336; /* Red */
+        }
 
-        .detected {
-    background-color: #f44336; /* Red */
-}
         .username {
             font-size: 20px; /* Increased font size */
             margin-top: 10px; /* Space below the tag */
         }
 
-        .reason {
-            font-size: 14px; /* Reason font size */
-            margin-top: 10px; /* Space above reason */
+        .view-details {
+            margin-top: auto; /* Push it to the bottom */
+            background-color: #f44336; /* Red button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .bannedby {
-            font-size: 14px; /* Banned by font size */
-            margin-top: 10px; /* Space above banned by */
+        .view-details:hover {
+            background-color: #c62828; /* Darker red on hover */
+        }
+
+        .overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .overlay-content {
+            background-color: #202020;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .close-btn {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .close-btn:hover {
+            background-color: #c62828;
         }
 
         .pagination {
@@ -130,27 +169,35 @@
         <div class="round downloadOption">
             <div class="tag">BANNED</div>
             <div class="username">oliver039455</div>
-            <div class="reason">Reason: Spread Of Malware, Failure to Comply with Staff</div>
-            <div class="bannedby">Blacklisted by: vzexi [Owner]</div>
+            <button class="view-details" onclick="showOverlay('oliver039455', 'Spread Of Malware, Failure to Comply with Staff', 'Unknown', 'cmprouty@yahoo.com', 'TX', 'vzexi [Owner]')">View Details</button>
         </div>
 
         <!-- Player Card 2 -->
         <div class="round downloadOption">
             <div class="tag">BANNED</div>
             <div class="username">Player2</div>
-            <div class="reason">Reason: Toxic Behavior</div>
-            <div class="bannedby">Blacklisted by: vzexi [Owner]</div>
+            <button class="view-details" onclick="showOverlay('Player2', 'Toxic Behavior', '192.168.1.2', 'player2@example.com', 'NY', 'vzexi [Owner]')">View Details</button>
         </div>
 
         <!-- Player Card 3 -->
         <div class="round downloadOption">
             <div class="tag">BANNED</div>
             <div class="username">Player3</div>
-            <div class="reason">Reason: Exploiting</div>
-            <div class="bannedby">Blacklisted by: vzexi [Owner]</div>
+            <button class="view-details" onclick="showOverlay('Player3', 'Exploiting', '192.168.1.3', 'player3@example.com', 'TX', 'vzexi [Owner]')">View Details</button>
         </div>
+    </div>
+</div>
 
-        <!-- Additional player cards can be added here -->
+<!-- Overlay for player details -->
+<div class="overlay" id="overlay">
+    <div class="overlay-content">
+        <button class="close-btn" onclick="closeOverlay()">Close</button>
+        <p><strong>Username:</strong> <span id="overlayUsername"></span></p>
+        <p><strong>Reason Of Blacklist:</strong> <span id="overlayReason"></span></p>
+        <p><strong>IP Address:</strong> <span id="overlayIP"></span></p>
+        <p><strong>Email:</strong> <span id="overlayEmail"></span></p>
+        <p><strong>State:</strong> <span id="overlayState"></span></p>
+        <p><strong>Banned By:</strong> <span id="overlayBannedBy"></span></p>
     </div>
 </div>
 
@@ -168,6 +215,20 @@
                 card.style.display = 'none';
             }
         });
+    }
+
+    function showOverlay(username, reason, ip, email, state, bannedBy) {
+        document.getElementById('overlayUsername').textContent = username;
+        document.getElementById('overlayReason').textContent = reason;
+        document.getElementById('overlayIP').textContent = ip;
+        document.getElementById('overlayEmail').textContent = email;
+        document.getElementById('overlayState').textContent = state;
+        document.getElementById('overlayBannedBy').textContent = bannedBy;
+        document.getElementById('overlay').style.display = 'flex'; // Show overlay
+    }
+
+    function closeOverlay() {
+        document.getElementById('overlay').style.display = 'none'; // Hide overlay
     }
 </script>
 
