@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blacklisted Users</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
     <style>
         body {
             background-color: #121212; /* Dark background */
@@ -39,24 +38,23 @@
             color: #fff; /* Text color */
         }
 
-.owner-tag {
-    font-weight: bold;
-    font-size: 16px; /* Adjust size as needed */
-    padding: 2px 5px;
-    border-radius: 5px;
-    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
-    background-size: 300%; /* Increase size for the animation */
-    color: white; /* Text color */
-    animation: rainbow 3s linear infinite; /* Animation */
-}
+        .owner-tag {
+            font-weight: bold;
+            font-size: 16px; /* Adjust size as needed */
+            padding: 2px 5px;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 300%; /* Increase size for the animation */
+            color: white; /* Text color */
+            animation: rainbow 3s linear infinite; /* Animation */
+        }
 
-@keyframes rainbow {
-    0% { background-position: 0%; }
-    100% { background-position: 100%; }
-}
+        @keyframes rainbow {
+            0% { background-position: 0%; }
+            100% { background-position: 100%; }
+        }
 
-        
-      .software-grid {
+        .software-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Responsive grid */
             gap: 20px; /* Space between cards */
@@ -67,42 +65,27 @@
             border-radius: 10px;
             overflow: hidden; /* Prevent content from spilling out */
             transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
-        }
-
-        .border1 {
             border: 1px solid #444; /* Darker border */
             background-color: #202020; /* Card background */
+            padding: 20px; /* Add some padding */
         }
 
-        .downloadOption {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            cursor: pointer;
-            height: 200px; /* Adjust height */
+        .tag {
+            padding: 3px 6px; /* Smaller padding */
+            border-radius: 5px;
+            font-size: 15px; /* Smaller font size */
+            font-weight: bold;
+            background-color: #f44336;
+            color: #fff;
+            margin-bottom: 10px; /* Space below the tag */
         }
-
-         .tag {
-    position: absolute;
-    bottom: 10px; /* Position it at the bottom */
-    left: 10px; /* Position it to the left */
-    padding: 3px 6px; /* Smaller padding */
-    border-radius: 5px;
-    font-size: 15px; /* Smaller font size */
-    font-weight: bold;
-    background-color: #f44336;
-    color: #fff;
-}
 
         .username {
             font-size: 20px; /* Increased font size */
-            margin-top: 10px; /* Space below the tag */
+            margin-bottom: 10px; /* Space below the username */
         }
 
         .info-button {
-            margin-top: auto; /* Push it to the bottom */
             background-color: #4CAF50; /* Green button */
             color: white;
             border: none;
@@ -112,9 +95,6 @@
             transition: background-color 0.3s;
             text-align: center; /* Center text */
             font-size: 12px; /* Smaller font size */
-            position: absolute; /* Positioning it */
-            bottom: 10px; /* Position it at the bottom */
-            right: 10px; /* Position it at the right */
         }
 
         .info-button:hover {
@@ -158,25 +138,6 @@
         .close-btn:hover {
             background-color: #c62828;
         }
-
-        .pagination {
-            text-align: center;
-            margin: 20px 0; /* Spacing for pagination */
-        }
-
-        .pagination a {
-            color: #f0f0f0;
-            padding: 5px 10px;
-            border: 1px solid #444; /* Border around the page numbers */
-            border-radius: 5px;
-            margin: 0 5px; /* Space between numbers */
-            text-decoration: none; /* Remove underline */
-            transition: background-color 0.3s;
-        }
-
-        .pagination a:hover {
-            background-color: #555; /* Hover effect */
-        }
     </style>
 </head>
 <body>
@@ -191,24 +152,27 @@
         <input type="text" id="searchInput" placeholder="Search for a player..." onkeyup="filterCards()" />
     </div>
 
-    <div class="round software-grid">
-           <div class="username">oliver039455</div>
-         <div class="bannedby">
-        Blacklisted by: vzexi <span class="owner-tag">Owner</span>
-    </div>
+    <!-- Player Cards Grid -->
+    <div class="software-grid">
+        <!-- Player Card 1 -->
+        <div class="round downloadOption">
+            <div class="username">oliver039455</div>
+            <div class="bannedby">
+                Blacklisted by: vzexi <span class="owner-tag">Owner</span>
+            </div>
             <div class="tag">BANNED</div>
             <button class="info-button" onclick="showOverlay('oliver039455', 'Spread Of Malware, Failure to Comply with Staff', '192.168.1.1', 'oliver@example.com', 'CA', 'vzexi [Owner]')">Info</button>
         </div>
 
         <!-- Player Card 2 -->
-        <div class="round software-grid">
+        <div class="round downloadOption">
             <div class="tag">BANNED</div>
             <div class="username">Player2</div>
             <button class="info-button" onclick="showOverlay('Player2', 'Toxic Behavior', '192.168.1.2', 'player2@example.com', 'NY', 'vzexi [Owner]')">Info</button>
         </div>
 
         <!-- Player Card 3 -->
-        <div class="round software-grid">
+        <div class="round downloadOption">
             <div class="tag">BANNED</div>
             <div class="username">Player3</div>
             <button class="info-button" onclick="showOverlay('Player3', 'Exploiting', '192.168.1.3', 'player3@example.com', 'TX', 'vzexi [Owner]')">Info</button>
@@ -252,17 +216,11 @@
 
     function showOverlay(username, reason, ip, email, state, bannedBy) {
         document.getElementById('overlayUsername').textContent = username;
-        
         document.getElementById('overlayReason').textContent = reason;
-        
         document.getElementById('overlayIP').textContent = ip;
-        
         document.getElementById('overlayEmail').textContent = email;
-        
         document.getElementById('overlayState').textContent = state;
-        
         document.getElementById('overlayBannedBy').textContent = bannedBy;
-        
         document.getElementById('overlay').style.display = 'flex'; // Show overlay
     }
 
