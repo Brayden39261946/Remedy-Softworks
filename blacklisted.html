@@ -64,17 +64,13 @@
             height: 100%; /* Ensure it takes full height */
         }
 
-           .tag {
-            background-color: #f44336; /* Red for "BANNED" */
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            position: absolute; /* Absolute positioning */
-            top: 10px; /* Position at the top */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust for centering */
-            font-size: 14px; /* Adjusted font size */
+           .banned-label {
+            background-color: red;
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
         .username {
@@ -175,21 +171,21 @@
     <div class="software-grid" id="playerCards">
         <!-- Player Card 1 -->
         <div class="round downloadOption">
-            <div class="tag">BANNED</div>
+            <div class="banned-label">BANNED</div>
             <div class="username">oliver039455</div>
             <button class="info-button" onclick="showOverlay('oliver039455', 'Spread Of Malware, Failure to Comply with Staff', '192.168.1.1', 'oliver@example.com', 'CA', 'vzexi [Owner]')">Info</button>
         </div>
 
         <!-- Player Card 2 -->
         <div class="round downloadOption">
-            <div class="tag">BANNED</div>
+            <div class="banned-label">BANNED</div>
             <div class="username">Player2</div>
             <button class="info-button" onclick="showOverlay('Player2', 'Toxic Behavior', '192.168.1.2', 'player2@example.com', 'NY', 'vzexi [Owner]')">Info</button>
         </div>
 
         <!-- Player Card 3 -->
         <div class="round downloadOption">
-            <div class="tag">BANNED</div>
+            <div class="banned-label">BANNED</div>
             <div class="username">Player3</div>
             <button class="info-button" onclick="showOverlay('Player3', 'Exploiting', '192.168.1.3', 'player3@example.com', 'TX', 'vzexi [Owner]')">Info</button>
         </div>
