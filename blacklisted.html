@@ -64,7 +64,7 @@
             height: 100%; /* Ensure it takes full height */
         }
 
-             .tag {
+         .tag {
     position: absolute;
     bottom: 10px; /* Position it at the bottom */
     left: 10px; /* Position it to the left */
@@ -77,25 +77,25 @@
         .detected {
     background-color: #f44336; /* Red */
 }
-
         .username {
             font-size: 20px; /* Increased font size */
             margin-top: 10px; /* Space below the tag */
         }
 
-        .view-details {
+        .info-button {
             margin-top: auto; /* Push it to the bottom */
-            background-color: #f44336; /* Red button */
+            background-color: #4CAF50; /* Green button */
             color: white;
             border: none;
             border-radius: 5px;
             padding: 10px;
             cursor: pointer;
             transition: background-color 0.3s;
+            text-align: center; /* Center text */
         }
 
-        .view-details:hover {
-            background-color: #c62828; /* Darker red on hover */
+        .info-button:hover {
+            background-color: #388E3C; /* Darker green on hover */
         }
 
         .overlay {
@@ -171,21 +171,21 @@
         <div class="round downloadOption">
             <div class="tag">BANNED</div>
             <div class="username">oliver039455</div>
-            <button class="view-details" onclick="showOverlay('oliver039455', 'Spread Of Malware, Failure to Comply with Staff', 'Unknown', 'cmprouty@yahoo.com', 'TX', 'vzexi [Owner]')">View Details</button>
+            <button class="info-button" onclick="showOverlay('oliver039455', 'Spread Of Malware, Failure to Comply with Staff', '192.168.1.1', 'oliver@example.com', 'CA', 'vzexi [Owner]')">Info</button>
         </div>
 
         <!-- Player Card 2 -->
         <div class="round downloadOption">
             <div class="tag">BANNED</div>
             <div class="username">Player2</div>
-            <button class="view-details" onclick="showOverlay('Player2', 'Toxic Behavior', '192.168.1.2', 'player2@example.com', 'NY', 'vzexi [Owner]')">View Details</button>
+            <button class="info-button" onclick="showOverlay('Player2', 'Toxic Behavior', '192.168.1.2', 'player2@example.com', 'NY', 'vzexi [Owner]')">Info</button>
         </div>
 
         <!-- Player Card 3 -->
         <div class="round downloadOption">
-            <div class="tag">BANNED</div>
+            <div class="tag detected">BANNED</div>
             <div class="username">Player3</div>
-            <button class="view-details" onclick="showOverlay('Player3', 'Exploiting', '192.168.1.3', 'player3@example.com', 'TX', 'vzexi [Owner]')">View Details</button>
+            <button class="info-button" onclick="showOverlay('Player3', 'Exploiting', '192.168.1.3', 'player3@example.com', 'TX', 'vzexi [Owner]')">Info</button>
         </div>
     </div>
 </div>
