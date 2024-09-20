@@ -46,23 +46,26 @@
             padding: 20px;
         }
 
-        .round {
-            border-radius: 10px;
-            overflow: hidden; /* Prevent content from spilling out */
-            background-color: #202020; /* Card background */
-            border: 1px solid #444; /* Darker border */
-            transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
-            height: 220px; /* Adjust height */
-            position: relative; /* Allow absolute positioning of label */
-        }
+       .round {
+    border-radius: 10px;
+    overflow: hidden; /* Prevent content from spilling out */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+}
 
-        .downloadOption {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Align items to the start */
-            height: 100%; /* Ensure it takes full height */
-        }
+.border1 {
+    border: 1px solid #444; /* Darker border */
+    background-color: #202020; /* Card background */
+}
+
+.downloadOption {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    height: 200px; /* Adjust height */
+}
 
          .tag {
     position: absolute;
@@ -230,11 +233,17 @@
 
     function showOverlay(username, reason, ip, email, state, bannedBy) {
         document.getElementById('overlayUsername').textContent = username;
+        
         document.getElementById('overlayReason').textContent = reason;
+        
         document.getElementById('overlayIP').textContent = ip;
+        
         document.getElementById('overlayEmail').textContent = email;
+        
         document.getElementById('overlayState').textContent = state;
+        
         document.getElementById('overlayBannedBy').textContent = bannedBy;
+        
         document.getElementById('overlay').style.display = 'flex'; // Show overlay
     }
 
