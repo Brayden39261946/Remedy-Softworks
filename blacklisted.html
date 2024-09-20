@@ -41,8 +41,12 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+            grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
             gap: 20px; /* Space between cards */
+            justify-items: center; /* Center cards within their grid cells */
+            padding: 20px;
+            margin: 0 auto; /* Center the grid container */
+            max-width: 1200px; /* Set a max-width for the grid */
         }
 
         .card {
