@@ -33,6 +33,21 @@
     transform: translateX(-50%); /* Center alignment */
     margin: 0; /* Remove margin */
 }
+
+        .tab-button {
+            background-color: #555; /* Button color */
+            color: white; /* Text color */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tab-button:hover {
+            background-color: #777; /* Button hover color */
+        }
+        
     </style>
     
 </head>
@@ -43,10 +58,14 @@
 </div>
 
 <div id="content" style="display: none;">
-    <header>
-         <div class="header-content">
+        <header>
+        <div class="header-content">
             <h1>Remedy Softworks</h1>
         </div>
+
+            <div class="tab-button">
+        <button>Blacklisted</button> <!-- Tab Button -->
+                </div>
     </header>
     
     <!-- Typewriter effect text -->
