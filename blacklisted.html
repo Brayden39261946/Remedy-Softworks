@@ -6,126 +6,127 @@
     <title>Blacklisted Users</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
     <style>
-        /* Basic reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Darker background for modern look */
-            color: #e0e0e0;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text color */
         }
 
-        h1 {
+        header {
+            background-color: #1e1e1e;
+            padding: 15px;
             text-align: center;
-            margin-bottom: 20px;
+            color: #f0f0f0;
         }
 
-        .search-container {
-            text-align: center;
-            margin-bottom: 20px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 20px;
         }
 
-        .search-container input {
-            padding: 10px;
-            width: 300px;
-            font-size: 1em;
-            border: 1px solid #444;
-            border-radius: 5px;
-            background-color: #1e1e1e; /* Match header style */
-            color: #e0e0e0;
-        }
-
-        .grid-container {
+        .software-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
             gap: 20px; /* Space between cards */
-            justify-items: center; /* Center cards within their grid cells */
             padding: 20px;
-            margin: 0 auto; /* Center the grid container */
-            max-width: 1200px; /* Set a max-width for the grid */
         }
 
-        .card {
+        .round {
+            border-radius: 10px;
+            overflow: hidden; /* Prevent content from spilling out */
             background-color: #202020; /* Card background */
             border: 1px solid #444; /* Darker border */
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center contents */
+            transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+            height: 250px; /* Fixed height for uniformity */
         }
 
-        .banned-label {
-            background-color: #f44336; /* Red background */
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            font-weight: bold;
-            text-align: center; /* Center text */
+        .downloadOption {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%; /* Ensure it takes full height */
         }
 
         .username {
-            font-weight: bold;
-            margin: 5px 0;
+            font-size: 20px; /* Username font size */
+            margin-bottom: 10px;
         }
 
         .reason {
-            color: #e0e0e0;
+            font-size: 14px; /* Reason font size */
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            background-color: #f44336; /* Red for "BANNED" */
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: auto; /* Align at bottom */
+        }
+
+        .pagination {
+            text-align: center;
+            margin: 20px 0; /* Spacing for pagination */
+        }
+
+        .pagination a {
+            color: #f0f0f0;
+            padding: 5px 10px;
+            border: 1px solid #444; /* Border around the page numbers */
+            border-radius: 5px;
+            margin: 0 5px; /* Space between numbers */
+            text-decoration: none; /* Remove underline */
+            transition: background-color 0.3s;
+        }
+
+        .pagination a:hover {
+            background-color: #555; /* Hover effect */
         }
     </style>
 </head>
 <body>
 
+<header>
     <h1>Blacklisted Users</h1>
+</header>
 
-    <div class="search-container">
-        <input type="text" id="search" placeholder="Search users...">
-    </div>
-
-    <div class="grid-container">
-        <!-- Example User Card 1 -->
-        <div class="card">
-            <div class="banned-label">BANNED</div>
-            <div class="username">User123</div>
+<div class="container">
+    <div class="software-grid">
+        <!-- Player Card 1 -->
+        <div class="round downloadOption">
+            <div class="username">Player1</div>
             <div class="reason">Reason: Cheating</div>
+            <div class="tag">BANNED</div>
         </div>
 
-        <!-- Example User Card 2 -->
-        <div class="card">
-            <div class="banned-label">BANNED</div>
-            <div class="username">Gamer456</div>
+        <!-- Player Card 2 -->
+        <div class="round downloadOption">
+            <div class="username">Player2</div>
             <div class="reason">Reason: Toxic Behavior</div>
+            <div class="tag">BANNED</div>
         </div>
 
-        <!-- Example User Card 3 -->
-        <div class="card">
-            <div class="banned-label">BANNED</div>
-            <div class="username">Player789</div>
-            <div class="reason">Reason: Spamming</div>
+        <!-- Player Card 3 -->
+        <div class="round downloadOption">
+            <div class="username">Player3</div>
+            <div class="reason">Reason: Exploiting</div>
+            <div class="tag">BANNED</div>
         </div>
 
-        <!-- Add more user cards as needed -->
+        <!-- Additional player cards can be added here -->
     </div>
 
-    <script>
-        // Optional: Add JavaScript to filter users in the search bar
-        const searchInput = document.getElementById('search');
-        const cards = document.querySelectorAll('.card');
-
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            cards.forEach(card => {
-                const username = card.querySelector('.username').textContent.toLowerCase();
-                card.style.display = username.includes(searchTerm) ? '' : 'none';
-            });
-        });
-    </script>
+    <div class="pagination">
+        <a href="#">[1]</a>
+        <a href="#">[2]</a>
+        <a href="#">[3]</a>
+        <!-- Add more pages as needed -->
+    </div>
+</div>
 
 </body>
 </html>
