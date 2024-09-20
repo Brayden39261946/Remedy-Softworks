@@ -61,28 +61,27 @@
             padding: 20px;
         }
 
-     .round {
-    border-radius: 10px;
-    overflow: hidden; /* Prevent content from spilling out */
-    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
-    border: 1px solid #444; /* Darker border */
-    background-color: #202020; /* Card background */
-    padding: 20px; /* Add some padding */
-    position: relative; /* Add this */
-}
+        .round {
+            border-radius: 10px;
+            overflow: hidden; /* Prevent content from spilling out */
+            transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+            border: 1px solid #444; /* Darker border */
+            background-color: #202020; /* Card background */
+            padding: 20px; /* Add some padding */
+            position: relative; /* Add this */
+        }
 
-    
-  .tag {
-    position: absolute;
-    bottom: 10px; /* Position it at the bottom */
-    left: 10px; /* Position it to the left */
-    padding: 3px 6px; /* Smaller padding */
-    border-radius: 5px;
-    font-size: 15px; /* Smaller font size */
-    font-weight: bold;
-    background-color: #f44336;
-    color: #fff;
-}
+        .tag {
+            position: absolute;
+            bottom: 40px; /* Position it above the button */
+            left: 10px; /* Position it to the left */
+            padding: 3px 6px; /* Smaller padding */
+            border-radius: 5px;
+            font-size: 15px; /* Smaller font size */
+            font-weight: bold;
+            background-color: #f44336;
+            color: #fff;
+        }
 
         .username {
             font-size: 20px; /* Increased font size */
@@ -90,6 +89,9 @@
         }
 
         .info-button {
+            position: absolute; /* Positioning it absolutely */
+            bottom: 10px; /* Position it at the bottom */
+            right: 10px; /* Position it at the right */
             background-color: #4CAF50; /* Green button */
             color: white;
             border: none;
@@ -101,21 +103,9 @@
             font-size: 12px; /* Smaller font size */
         }
 
-        .info-button {
-    position: absolute; /* Positioning it absolutely */
-    bottom: 10px; /* Position it at the bottom */
-    right: 10px; /* Position it at the right */
-    background-color: #4CAF50; /* Green button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 8px; /* Smaller padding for a smaller button */
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center; /* Center text */
-    font-size: 12px; /* Smaller font size */
-}
-
+        .info-button:hover {
+            background-color: #388E3C; /* Darker green on hover */
+        }
 
         .overlay {
             display: none; /* Hidden by default */
@@ -173,6 +163,9 @@
         <!-- Player Card 1 -->
         <div class="round downloadOption">
             <div class="username">oliver039455</div>
+            <div class="bannedby">
+                Blacklisted by: vzexi <span class="owner-tag">Owner</span>
+            </div>
             <div class="tag">BANNED</div>
             <button class="info-button" onclick="showOverlay('oliver039455', 'Spread Of Malware, Failure to Comply with Staff', '192.168.1.1', 'oliver@example.com', 'CA', 'vzexi [Owner]')">Info</button>
         </div>
@@ -198,11 +191,16 @@
     <div class="overlay-content">
         <button class="close-btn" onclick="closeOverlay()">Close</button>
         <p><strong>Username:</strong> <span id="overlayUsername"></span></p>
+        
         <p><strong>Reason Of Blacklist:</strong> <span id="overlayReason"></span></p>
+        
         <p><strong>IP Address:</strong> <span id="overlayIP"></span></p>
+        
         <p><strong>Email:</strong> <span id="overlayEmail"></span></p>
+        
         <p><strong>State:</strong> <span id="overlayState"></span></p>
-        <p><strong>Banned By:</strong> <span id="overlayBannedBy"></span></p> <!-- This will now include the owner tag -->
+        
+        <p><strong>Banned By:</strong> <span id="overlayBannedBy"></span></p>
     </div>
 </div>
 
