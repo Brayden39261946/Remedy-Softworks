@@ -24,6 +24,21 @@
             margin-top: 20px;
         }
 
+        .search-bar {
+            margin-bottom: 20px; /* Space below the search bar */
+            text-align: center;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 80%; /* Width of the input field */
+            max-width: 400px; /* Max width */
+            border: 1px solid #444; /* Border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #202020; /* Background color */
+            color: #fff; /* Text color */
+        }
+
         .software-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
@@ -104,6 +119,11 @@
 </header>
 
 <div class="container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search for a player..." />
+    </div>
+
     <div class="software-grid">
         <!-- Player Card 1 -->
         <div class="round downloadOption">
@@ -129,14 +149,6 @@
 
         <!-- Additional player cards can be added here -->
     </div>
-</div>
-
-<!-- Pagination Navigation -->
-<div class="pagination">
-    <a href="#">[1]</a>
-    <a href="#">[2]</a>
-    <a href="#">[3]</a>
-    <!-- Add more pages as needed -->
 </div>
 
 </body>
